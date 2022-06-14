@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="474-VA-FXU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="9PP-4v-Fve">
+            <objects>
+                <navigationController id="474-VA-FXU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z19-52-rwG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.16513203479999999" blue="0.14064302440000001" alpha="0.78911564629999997" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="O9p-JG-fnO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t2B-OG-ke3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-912" y="96"/>
+        </scene>
+        <!--Shuffle cards app-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="shuffle_cards_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih6-CP-lyO">
+                                <rect key="frame" x="50" y="118" width="314" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.16513203479999999" blue="0.14064302440000001" alpha="0.78911564629999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="utX-85-hsx"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Shuffle cards"/>
+                                <connections>
+                                    <action selector="shuffleCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YP3-UK-Gab"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oxv-Ud-6RU">
+                                <rect key="frame" x="30" y="218" width="354" height="594"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tMe-MA-Hsg">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell" id="Mu4-f1-y8c" customClass="cardCollectionViewCell" customModule="shuffle_cards_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SwC-Hx-vRA">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKS-5n-cGE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="IWP-Ci-jd8"/>
+                                                        <constraint firstAttribute="height" constant="120" id="K7i-99-sie"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="iKS-5n-cGE" secondAttribute="trailing" id="Yqt-Wb-tYD"/>
+                                                <constraint firstItem="iKS-5n-cGE" firstAttribute="top" secondItem="SwC-Hx-vRA" secondAttribute="top" id="dJk-pN-vly"/>
+                                                <constraint firstItem="iKS-5n-cGE" firstAttribute="leading" secondItem="SwC-Hx-vRA" secondAttribute="leading" id="mDN-At-KSd"/>
+                                                <constraint firstAttribute="bottom" secondItem="iKS-5n-cGE" secondAttribute="bottom" id="qcl-Md-ivt"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardImageView" destination="iKS-5n-cGE" id="eeM-Ra-wuh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oxv-Ud-6RU" firstAttribute="top" secondItem="Ih6-CP-lyO" secondAttribute="bottom" constant="50" id="0R1-u9-Cae"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oxv-Ud-6RU" secondAttribute="trailing" constant="30" id="AT6-Y8-Nd4"/>
+                            <constraint firstItem="Ih6-CP-lyO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="F7V-lm-Vdq"/>
+                            <constraint firstItem="Oxv-Ud-6RU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Lpg-fI-5uo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Oxv-Ud-6RU" secondAttribute="bottom" constant="50" id="auP-oA-95i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ih6-CP-lyO" secondAttribute="trailing" constant="50" id="rBR-rf-x83"/>
+                            <constraint firstItem="Ih6-CP-lyO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="sIQ-kb-mvr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Shuffle cards app" id="3j0-eD-Mta"/>
+                    <connections>
+                        <outlet property="cardsCollectionView" destination="Oxv-Ud-6RU" id="bK3-0q-7yy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
