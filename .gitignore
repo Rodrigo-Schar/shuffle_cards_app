@@ -1,2 +1,4 @@
+## Build generatedbuild/DerivedData/
 Pods/
 .DS_STORE
+xcuserdata/
